@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 	before_action :age
 
 	def home
-		@name  = 'Yogi Priyo'
+		@name  = params['name']
 	end
 
 	def about
