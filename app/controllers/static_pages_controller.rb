@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
 	
+	#untuk selalu memanggil variable age setiap kali memanggil halaman
 	before_action :age
 
 	def home
