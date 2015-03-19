@@ -1,3 +1,22 @@
 <% provide(:title, "Home") %>
-<h1>Hello <%= @name %></h1>
-<p>My age is <%= @age %></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <img class='img-responsive' src="https://maps.googleapis.com/maps/api/staticmap?center=Yogyakarta,Indonesia&zoom=12&size=1200x200&scale=2&maptype=roadmap">
+  </div>
+</div>
+<div class="row">
+  <% 8.times do %>
+    <div class="col-md-3 place-item">
+      <img src="http://placehold.it/200x150&text=Place%20Image" class="img-thumbnail">
+      <h2>Place Name</h2>
+      <p>
+      Enim ac, arcu! Eros parturient tristique elit et? Pellentesque, elit vel sociis pid, in tempor tincidunt arcu et nec, vel.
+      </p>
+      <div class='pull-right'>
+      	<img src="http://placehold.it/20x20" class="img-thumbnail">
+      	<p>user</p>	
+      </div>
+    </div>
+  <% end %>
+</div>
