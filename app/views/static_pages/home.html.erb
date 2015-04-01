@@ -6,13 +6,12 @@
   </div>
 </div>
 <div class="row">
-  <% 8.times do %>
+  <!-- looping ke semua place di dalam array @places -->
+  <% @places.each do |place| %>
     <div class="col-md-3 place-item">
       <img src="http://placehold.it/200x150&text=Place%20Image" class="img-thumbnail">
-      <h2>Place Name</h2>
-      <p>
-      Enim ac, arcu! Eros parturient tristique elit et? Pellentesque, elit vel sociis pid, in tempor tincidunt arcu et nec, vel.
-      </p>
+      <h2><%= place.name %></h2>
+      <p><%= truncate place.description, length: 50 %></p>
       <div class='pull-right'>
       	<img src="http://placehold.it/20x20" class="img-thumbnail">
       	<p>user</p>	

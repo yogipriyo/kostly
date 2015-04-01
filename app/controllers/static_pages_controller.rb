@@ -4,7 +4,9 @@ class StaticPagesController < ApplicationController
 	before_action :age
 
 	def home
-		@name  = params['name']
+		#@name  = params['name']
+    #@places = Place.all
+    @places = Place.limit(8)
 	end
 
 	def about
