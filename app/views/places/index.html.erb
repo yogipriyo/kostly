@@ -1,0 +1,27 @@
+<h1>Listing Places</h1>
+<table class='table table-striped'>
+  <%= link_to 'Create Place', new_place_path, class: 'btn btn-primary' %>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @places.each do |place| %>
+      <tr>
+        <td><%= place.id %></td>
+        <td><%= place.name %></td>
+        <td><%= place.description %></td>
+        <td width='30%'>
+          <div class='btn-group'>
+            <%= link_to 'View', place_path(place), class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_place_path(place), class: 'btn btn-default' %>
+            <%= link_to 'Delete', place_path(place), class: 'btn btn-default', method: :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'places/index'
+
   get 'home' => 'static_pages#home'
   get 'about' => 'static_pages#about'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  #resources yang terdaftar di routes biasanya hanya resource yang boleh diakses/modif lewat URL/front end
+  resources :places 
+  
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
