@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
 	def home
 		#@name  = params['name']
     #@places = Place.all
-    @places = Place.limit(8)
+    @places = Place.order("created_at DESC").limit(8)
 	end
 
 	def about
