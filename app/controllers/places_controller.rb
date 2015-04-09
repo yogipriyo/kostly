@@ -23,7 +23,7 @@ class PlacesController < ApplicationController
     #place_params itu dari mana ya?
     @update_place = Place.find(params[:id])
     @update_place.update(place_params)
-    redirect_to places_index_path
+    redirect_to places_index_path, notice: 'Place has been updated!'
   end
   
   def show
@@ -35,7 +35,7 @@ class PlacesController < ApplicationController
   def destroy
     place = Place.find(params[:id])
     place.destroy
-    redirect_to places_index_path
+    redirect_to places_index_path, notice: 'Place has been deleted!'
   end
 
   private
