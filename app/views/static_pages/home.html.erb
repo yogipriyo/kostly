@@ -8,13 +8,14 @@
 <div class="row">
   <!-- looping ke semua place di dalam array @places -->
   <% @places.each do |place| %>
-    <div class="col-md-3 place-item">
+    <div class="col-md-3 columns place-item">
       <img src="http://placehold.it/200x150&text=Place%20Image" class="img-thumbnail">
       <h2><%= place.name %></h2>
-      <p><%= truncate place.description, length: 50 %></p>
-      <div class='pull-right'>
-      	<img src="http://placehold.it/20x20" class="img-thumbnail">
-      	<p>user</p>	
+      <p><em>Posted at: <%= time_ago_in_words place.created_at %> ago</em></p>
+      <p><%= truncate place.description, length: 50  %></p>
+      <div class="pull-right">
+        <img src="http://placehold.it/20x20">
+        <small>By: Someone</small>
       </div>
     </div>
   <% end %>

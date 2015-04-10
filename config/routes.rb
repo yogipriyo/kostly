@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   get 'places/index'
 
   get 'home' => 'static_pages#home'
@@ -7,7 +9,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   #resources yang terdaftar di routes biasanya hanya resource yang boleh diakses/modif lewat URL/front end
-  resources :places 
+  resources :places
+  resources :users
   
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
