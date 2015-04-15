@@ -26,9 +26,24 @@
 
 #lebih hemat resource karena hanya mengeksekusi query 1 kali, sedangkan yang diatas query akan
 #diulang sebanyak jumlah array
-kost_list = [
-  {name: "Last", description: "Last"},
-  {name: "Last 2", description: "Last 2"}
-]
+#kost_list = [
+#  {name: "Last", description: "Last"},
+#  {name: "Last 2", description: "Last 2"}
+#]
 
-Place.create(kost_list)
+#Place.create(kost_list)
+
+user = User.create!(name: 'Delta Purna W.', email: 'd@qiscus.com')
+        user2 = User.create!(name: 'Ashari Juang', email: 'j@qiscus.com')
+
+        # create 20 fake data with user and user2 everytime we run rake db:seed
+        10.times do
+          user.places.create!(
+            name: "Kos #{Faker::Address.city}",
+            description: "#{Faker::Lorem.paragraph(3)}"
+          )
+          user2.places.create!(
+            name: "Kos #{Faker::Address.city}",
+            description: "#{Faker::Lorem.paragraph(3)}"
+          )
+        end

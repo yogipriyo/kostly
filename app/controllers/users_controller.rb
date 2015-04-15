@@ -23,6 +23,9 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+    end
     if @user.update(user_params)
       redirect_to users_path, notice: 'User has been updated!'
     else
